@@ -1,0 +1,51 @@
+
+.loginb{
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%,-50%);
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  border-radius: 2%;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+}
+
+.Loginm{
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 23px;
+  text-align: left;
+}
+
+.loginm{
+  font-size: 14px;
+  margin-left: 23px;
+  text-align: left;
+}
+
+input{
+  margin-top: 50px;
+  width: 340px;
+  height: 40px;
+  border-radius: 7px;
+  margin-bottom: 120px;
+}
+
+.sed div{
+  font-size: 13px;
+  color: rgb(43, 118, 224);
+}
+
+Button{
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  width: 330px;
+  height: 45px;
+  border-radius: 35px;
+  border: 0px solid black;
+  background-color: rgb(35, 91, 171);
+}
