@@ -46,7 +46,7 @@ function Success({ id, Logout }) {
       setChatHistory([...chatHistory, newMessage]);
 
       setChatMessage(""); // 메시지 전송 후 입력값 초기화
-      server.emit("send", chatMessage);
+      server.emit("send", { nickName: id, msg: chatMessage });
     }
   };
 
@@ -65,6 +65,17 @@ function Success({ id, Logout }) {
       // setChatMessage(msg_array)
     });
   }, [chatHistory]);
+
+  function handleSendKeyClick(e) {
+    if (e.key == "Enter") {
+      handleSendMessage();
+    }
+  }
+  //   //메세지 전송후 인풋박스 클리어 + 나의 작성 메세지만 클리어
+  //   if(msg_ref.current && msg[msg.length - 1].level == "me"){
+  //     msg_ref.current.value = ""
+  //   }
+  // },[msg])
 
   return (
     <>
@@ -90,7 +101,7 @@ function Success({ id, Logout }) {
                   message.level == "sys" ? "chat-messagecenter" : "chat-message"
                 }
               >
-                {message.msg}
+                {message.nickName}{message.msg}
               </div>
             </div>
           ))}
@@ -102,6 +113,7 @@ function Success({ id, Logout }) {
           ref={inputRef}
           value={chatMessage}
           onChange={handleInputChange}
+          onKeyPress={handleSendKeyClick}
         />
         <button className="submit" onClick={handleSendMessage}>
           전송
