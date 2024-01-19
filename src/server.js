@@ -1,3 +1,3 @@
 import {io} from 'socket.io-client'
-const server = io('http://localhost:3002/')
+const server = io('https://aischat-projectserver.onrender.com')
 export default server
